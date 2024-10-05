@@ -1,0 +1,11 @@
+version: 1
+services:
+  - type: web
+    name: main # Name of your service
+    env: python  # Environment type
+    buildCommand: pip install -r requirements.txt  # Command to install dependencies
+    startCommand: python3 main.py  # Command to start your bot
+    envVars:
+      - key: BOT_TOKEN  # Name of the environment variable
+        value: 7456388271:AAHQOvePZvIkF6Rv5kaLeQFippEBFbM6N5g  # Your Telegram bot token (replace this with actual token)
+    autoDeploy: true  # Automatically deploy on every push to the main branch

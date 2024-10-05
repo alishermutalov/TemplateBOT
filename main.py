@@ -3,6 +3,8 @@ from aiogram.filters import CommandStart, Command
 from aiogram.enums import ParseMode
 import asyncio ,sys , logging
 from aiogram.types import KeyboardButton, InlineKeyboardButton, ReplyKeyboardMarkup, InlineKeyboardMarkup, WebAppInfo
+import os
+
 
 keyboard = ReplyKeyboardMarkup(keyboard=[[
     KeyboardButton(text="Demo Web Apps")
@@ -24,7 +26,7 @@ inline_keyboard = InlineKeyboardMarkup(inline_keyboard=[
                                                         ])
 
 #BotFather tomonidan botga ulash uchun berilgan TOKEN
-API_TOKEN ='7456388271:AAHQOvePZvIkF6Rv5kaLeQFippEBFbM6N5g' 
+API_TOKEN = os.getenv("BOT_TOKEN")
 
 # Bot va Dispatcher obyektlarini yaratamiz
 bot = Bot(token=API_TOKEN)  # TOKEN o'rniga o'zingizning botingizning tokenini yozing
